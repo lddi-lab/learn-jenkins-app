@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo 'Test stage'
                 sh '''
-                    (ls /build/index.html >> /dev/null 2>&1 && echo yes) || echo no
+                    (ls build/index.html >> /dev/null 2>&1 && echo yes) || echo no
                     npm test
                 '''
             }
