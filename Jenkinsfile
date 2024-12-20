@@ -53,7 +53,8 @@ pipeline {
             steps {
                 sh '''
                     npm install -g serve
-                    serve -s build
+                    snode_modules/.bin/serve -s build &
+                    sleep 10
                     npx playwight test
                 '''
             }
