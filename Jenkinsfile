@@ -20,6 +20,16 @@ pipeline {
                 '''
             }
         }
+        stage('Test'){
+            step {
+                echo 'Test stage'
+                sh '''
+                    (ls /build/index.html >> /dev/null 2>&1 && echo yes) || echo no
+                    npm test
+                '''
+            }
+
+        }
         
     }
 }
