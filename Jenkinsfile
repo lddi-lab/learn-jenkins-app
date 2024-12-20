@@ -20,8 +20,8 @@ pipeline {
                 '''
             }
         }
-        stage('Test'){
-            step {
+        stage('Test') {
+            steps {
                 echo 'Test stage'
                 sh '''
                     (ls /build/index.html >> /dev/null 2>&1 && echo yes) || echo no
@@ -30,6 +30,6 @@ pipeline {
             }
 
         }
-        
+           
     }
 }
