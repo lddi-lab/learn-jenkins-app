@@ -56,6 +56,7 @@ pipeline {
                     snode_modules/.bin/serve -s build &
                     sleep 10
                     npx playwight test
+                    
                 '''
             }
 
