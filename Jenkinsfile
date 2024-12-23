@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        NPM_CONFIG_CACHE = "${WORKSPACE}/.npm"
+    }
     
     stages {
         /*
@@ -46,17 +49,15 @@ pipeline {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
                     reuseNode true
-                    
-
                 }
             }
             steps {
                 sh '''
                     npm install -g serve
-                    snode_modules/.bin/serve -s build &
+                    /workspaces/learn-jenkins-app/node_modules/serve -s build &
                     sleep 10
                     npx playwight test
-                    
+
                 '''
             }
 
