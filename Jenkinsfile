@@ -50,7 +50,6 @@ pipeline {
             }
             steps {
                 sh '''
-                    sudo chmod -R 777 /usr/local/lib/node_modules/
                     npm install -g serve
                     /workspaces/learn-jenkins-app/node_modules/serve -s build &
                     sleep 10
