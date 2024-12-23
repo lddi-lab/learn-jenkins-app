@@ -54,7 +54,7 @@ pipeline {
             steps {
                 sh '''
                     npm install -g serve
-                    /workspaces/learn-jenkins-app/node_modules/serve -s build &
+                    serve -s build &
                     sleep 10
                     npx playwight test
 
